@@ -42,9 +42,9 @@
 (defn prompt-message
   "A prompt that will animate to help the user with a given input"
   [message]
-  [:div {:class "my-messages"} 
+  [:div {:class "my-messages"}
    [:div {:class "prompt message-animation"} [:p message]]])
-  
+
 
 (defn input-element
   "An input element which updates its value and on focus parameters on change, blur, and focus"
@@ -57,7 +57,7 @@
            :value @value
            :on-change #(reset! value (-> % .-target .-value))
            :on-focus #(swap! in-focus not)
-           :on-blur #(swap! in-focus not)}])
+           :on-blur (fn [arg] (if (nil? @value) (reset! value ""))(swap! in-focus not))}])
 
 
 (defn input-and-prompt
@@ -72,7 +72,7 @@
        (if (and required? (= "" @input-element-arg))
          [:div "Field is required!"]
          [:div])])))
-      
+
 
 (defn email-form [email-address-atom]
   (input-and-prompt "email"

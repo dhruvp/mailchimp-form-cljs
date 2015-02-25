@@ -94,5 +94,7 @@
              :production {:ring {:open-browser? false
                                  :stacktraces?  false
                                  :auto-reload?  false}
-                          :cljsbuild {:builds {:app {:compiler {:main "mailchimp-form.prod"}}}}
+                          :cljsbuild {:builds {:app
+                                                {:source-paths ["env/prod/cljs"]
+                                                 :compiler {:main "mailchimp-form.prod"}}}}
                           }})
