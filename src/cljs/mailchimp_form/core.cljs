@@ -12,7 +12,7 @@
 
 
 (defn check-nil-then-predicate
-  "Check if the value is nil, then apply hte predicate"
+  "Check if the value is nil, then apply the predicate"
   [value predicate]
   (if (nil? value)
     false
@@ -97,15 +97,15 @@
   [password requirements]
   [:div
    [:ul (->> requirements
-            (filter (fn [req] (not ((:check-fn req) @password))))
-            (doall)
-            (map (fn [req] ^{:key req} [:li (:message req)])))]])
+             (filter (fn [req] (not ((:check-fn req) @password))))
+             (doall)
+             (map (fn [req] ^{:key req} [:li (:message req)])))]])
 
 
 (defn password-form
   [password]
   (let [password-type-atom (atom "password")]
-    (fn [] 
+    (fn []
       [:div
        [(input-and-prompt "password"
                           "password"

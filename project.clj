@@ -4,7 +4,7 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
 
-  :source-paths ["src/clj" "src/cljs"]
+  :source-paths ["src/clj" "src/cljs" "target/classes"]
 
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [cljsjs/react "0.12.2-5"]
@@ -12,7 +12,7 @@
                  [reagent-forms "0.4.3"]
                  [reagent-utils "0.1.2"]
                  [secretary "1.2.1"]
-                 [org.clojure/clojurescript "0.0-2850" :scope "provided"]
+                 [org.clojure/clojurescript "0.0-2934" :scope "provided"]
                  [ring "1.3.2"]
                  [ring/ring-defaults "0.1.3"]
                  [prone "0.8.0"]
@@ -47,6 +47,7 @@
                                         ;;:externs       ["react/externs/react.js"]
                                         :asset-path   "js/out"
                                         :optimizations :none
+                                        :cache-analysis true
                                         :pretty-print  true}}}}
 
   :profiles {:dev {:repl-options {:init-ns mailchimp-form.handler
