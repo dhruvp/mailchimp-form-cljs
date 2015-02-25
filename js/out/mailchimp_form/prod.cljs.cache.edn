@@ -1,0 +1,2 @@
+;; Analyzed by ClojureScript 0.0-2934
+{:name mailchimp-form.prod, :doc nil, :excludes #{}, :use-macros nil, :require-macros nil, :uses nil, :requires {mailchimp-form.core mailchimp-form.core, core mailchimp-form.core}, :imports nil}
